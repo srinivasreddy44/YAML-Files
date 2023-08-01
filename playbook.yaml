@@ -13,12 +13,15 @@
 
        - name: Start docker service
          action: service name=docker state=started
+         ignore_errors: true
 
        - name: Stop docker service
          action: service name=docker state=stopped
+         ignore_errors: true
 
        - name: Restart docker service
-         action: service name=docker state=restarted 
+         action: service name=docker state=restarted
+         ignore_errors: true 
 
        - name: Install java on host Machine
          action: yum pkg=java state=present
@@ -31,9 +34,11 @@
 
        - name: Stop httpd server 
          action: service name=httpd state=stopped
+         ignore_errors: true
 
        - name: Restart httpd server
-         action: service name=httpd state=restarted 
+         action: service name=httpd state=restarted
+         ignore_errors: true  
 
 
       
