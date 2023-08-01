@@ -1,0 +1,15 @@
+---
+- hosts: webserver
+  connection: ssh
+  user: ansible
+  become: yes
+  tasks:
+
+       - name: Create a file with ansible playbook
+         file: path=/home/ansible/srinivas.txt state=touch
+
+       - name: Create a directory with ansible playbook
+         file: path=/home/ansible/DevOps-7PM state=directory
+
+       - name: Create a file to hosts
+         file: src=./ansible.sh dest=/home/ansible 
